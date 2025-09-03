@@ -1,0 +1,57 @@
+---
+import { gsap } from "gsap";
+import Link from "./Link.astro";
+---
+
+<!-- Mobile Header -->
+<nav
+  id="Header"
+  class="lg:hidden flex justify-between items-center px-6 h-16 border-b border-[var(--accent)]
+         bg-[var(--secondary)]/90 backdrop-blur-md shadow-md"
+>
+  <!-- Brand -->
+  <a
+    href="/"
+    class="text-xl font-bold tracking-wide text-[var(--text)] hover:text-[var(--accent)] transition-colors"
+  >
+    Arnav
+  </a>
+
+  <!-- Hamburger Button -->
+  <button id="hamBtn" class="text-2xl text-[var(--text)]">☰</button>
+</nav>
+
+<!-- Mobile Menu -->
+<div
+  id="hamMenu"
+  class="hidden w-full h-full absolute top-16 left-0 bg-[var(--secondary)]/95
+         backdrop-blur-md shadow-lg border-t border-[var(--accent)]
+         justify-center items-center flex-col gap-6 z-10"
+>
+  <Link title="Skills" url="#skills" />
+  <Link title="Projects" url="#projects" />
+  <Link title="Contact" url="#contact" />
+</div>
+
+<!-- Script to handle animation -->
+<script>
+  import { gsap } from "gsap";
+
+  const btn = document.getElementById("hamBtn");
+  const menu = document.getElementById("hamMenu");
+
+  if (btn && menu) {
+    btn.addEventListener("click", () => {
+      // animate open
+      if (menu.classList.contains("hidden")) {
+        gsap.fromTo(
+          menu,
+          { opacity: 0, y: -30 },
+          { opacity: 1, duration: 0.4, y: 0, ease: "circ" }
+        );
+      }
+      menu.classList.toggle("hidden");
+      menu.classList.toggle("flex");
+    });
+  }
+</script>

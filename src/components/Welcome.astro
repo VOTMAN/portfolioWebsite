@@ -1,3 +1,16 @@
-<main class="flex-1 bg-gray-50">
-  helloj
+<main class="flex-1">
+  <p class="text-6xl md:text-7xl lg:text-8xl sm:mb-5" id="Title">Arnav,<br> A CS Student <br>and Developer</p>
 </main>
+
+<script>
+  import {gsap} from "gsap"
+
+gsap.fromTo("#Title",
+      { opacity: 0, x:-50 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.6,
+        ease: "power3"
+      })
+</script>
