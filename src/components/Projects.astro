@@ -1,0 +1,13 @@
+---
+import projects from "../data/projects.json"
+---
+
+
+<section id="projects" class="min-h-screen flex flex-col items-center justify-center">
+  {projects.map((project) => {
+    return <div>
+
+      {project.name}
+    </div>
+  })}
+</section>

@@ -1,0 +1,77 @@
+[
+  {
+    "name": "HTML",
+    "url": "/icons/HTML5.svg",
+    "level": "advanced"
+  },
+  {
+    "name": "CSS",
+    "url": "/icons/CSS3.svg",
+    "level": "advanced"
+  },
+  {
+    "name": "Javascript",
+    "url": "/icons/JavaScript.svg",
+    "level": "advanced"
+  },
+  {
+    "name": "Python",
+    "url": "/icons/Python.svg",
+    "level": "advanced"
+  },
+  {
+    "name": "C",
+    "url": "/icons/C.svg",
+    "level": "advanced"
+  },
+  {
+    "name": "C++",
+    "url": "/icons/cpp.svg",
+    "level": "advanced"
+  },
+  {
+    "name": "Java",
+    "url": "/icons/Java.svg",
+    "level": "advanced"
+  },
+  {
+    "name": "Astro",
+    "url": "/icons/Astro.svg",
+    "level": "advanced"
+  },
+  {
+    "name": "Flask",
+    "url": "/icons/Flask.svg",
+    "level": "advanced"
+  },
+  {
+    "name": "React",
+    "url": "/icons/React.svg",
+    "level": "advanced"
+  },
+  {
+    "name": "Tailwind",
+    "url": "/icons/Tailwind.svg",
+    "level": "advanced"
+  },
+  {
+    "name": "NextJS",
+    "url": "/icons/Nextjs.svg",
+    "level": "advanced"
+  },
+  {
+    "name": "PostgreSql",
+    "url": "/icons/Postgresql.svg",
+    "level": "advanced"
+  },
+  {
+    "name": "MongoDB",
+    "url": "/icons/Mongodb.svg",
+    "level": "advanced"
+  },
+  {
+    "name": "TanStack",
+    "url": "/icons/tanstack.png",
+    "level": "advanced"
+  }
+]

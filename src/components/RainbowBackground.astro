@@ -1,0 +1,14 @@
+---
+// RainbowBackground.astro
+---
+<div class="rainbow-bg">
+  {Array.from({ length: 25 }).map((_, i) => (
+    <div class="rainbow" />
+  ))}
+  <!-- <div class="h"></div> -->
+  <!-- <div class="v"></div> -->
+</div>
+
+<style is:global>
+  @import "../styles/rainbow.css";
+</style>

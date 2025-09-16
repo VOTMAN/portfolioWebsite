@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Password Manager",
+    "desc": "This app is a Secure, cross-platform, and locally hosted password manager.",
+    "github": "https://github.com/VOTMAN/passwordManager",
+    "url": "https://password-manager-seven-delta.vercel.app/",
+    "image": ""
+  },
+  {
+    "name": "Social App",
+    "desc": "",
+    "github": "",
+    "url": "",
+    "image": ""
+  }
+]

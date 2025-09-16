@@ -1,0 +1,65 @@
+:root {
+  --purple: rgb(232 121 249);
+  --blue: rgb(96 165 250);
+  --green: rgb(94 234 212);
+}
+
+.rainbow-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+
+}
+
+.rainbow {
+  height: 100vh;
+  width: 0;
+  top: 0;
+  right: 0;
+  position: absolute;
+  transform: rotate(10deg);
+  transform-origin: top right;
+  animation: slide 45s linear infinite;
+  opacity: 0.3;
+}
+
+.rainbow:nth-child(1) {
+  animation-delay: -1.8s;
+  box-shadow: -130px 0 80px 40px rgb(148, 133, 133),
+              -50px 0 50px 25px var(--purple),
+              0 0 50px 25px var(--blue),
+              50px 0 50px 25px var(--green),
+              130px 0 80px 40px rgb(147, 66, 66);
+}
+.rainbow:nth-child(2) {
+  animation-delay: -3.6s;
+  box-shadow: -130px 0 80px 40px rgb(105, 96, 96),
+              -50px 0 50px 25px var(--blue),
+              0 0 50px 25px var(--green),
+              50px 0 50px 25px var(--purple),
+              130px 0 80px 40px rgb(82, 65, 65);
+}
+
+@keyframes slide {
+  from { right: -25vw; }
+  to   { right: 125vw; }
+}
+
+.h {
+  box-shadow: 0 0 50vh 40vh rgb(88, 78, 78);
+  width: 100vw;
+  height: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+.v {
+  box-shadow: 0 0 35vw 25vw rgb(82, 60, 60);
+  width: 0;
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
