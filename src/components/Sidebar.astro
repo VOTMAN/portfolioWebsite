@@ -5,53 +5,90 @@ import Link from "./Link.astro";
 
 <!-- Mobile Header -->
 <nav
-  id="Header"
-  class="lg:hidden flex justify-between items-center px-6 h-16 border-b border-[var(--accent)]
-         bg-[var(--secondary)]/90 backdrop-blur-md shadow-md"
+  id="mobileHeader"
+  class="lg:hidden flex justify-between items-center px-6 h-16
+         border-b border-[var(--accent)] bg-black/40
+         backdrop-blur-md shadow-md z-50"
 >
-  <!-- Brand -->
   <a
     href="/"
-    class="text-xl font-bold tracking-wide text-[var(--text)] hover:text-[var(--accent)] transition-colors"
+    class="text-2xl font-bold tracking-wide text-[var(--text)]
+           hover:text-[var(--accent)] transition-colors"
   >
     Arnav
   </a>
 
-  <!-- Hamburger Button -->
-  <button id="hamBtn" class="text-2xl text-[var(--text)]">☰</button>
+  <button id="hamBtn" class="text-3xl text-[var(--text)] hover:text-[var(--accent)] transition-colors">
+    ☰
+  </button>
 </nav>
 
 <!-- Mobile Menu -->
 <div
   id="hamMenu"
-  class="hidden w-full h-full absolute top-16 left-0 bg-[var(--secondary)]/95
-         backdrop-blur-md shadow-lg border-t border-[var(--accent)]
-         justify-center items-center flex-col gap-6 z-10"
+  class="hidden w-full h-screen fixed top-16 left-0 bg-black/35
+         backdrop-blur-lg shadow-lg border-t border-[var(--accent)]
+         flex-col gap-8 justify-center items-center z-40"
 >
+  <Link title="About Me" url="./about" />
   <Link title="Skills" url="#skills" />
   <Link title="Projects" url="#projects" />
   <Link title="Contact" url="#contact" />
 </div>
 
-<!-- Script to handle animation -->
 <script>
   import { gsap } from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger)
 
   const btn = document.getElementById("hamBtn");
   const menu = document.getElementById("hamMenu");
 
-  if (btn && menu) {
-    btn.addEventListener("click", () => {
-      // animate open
-      if (menu.classList.contains("hidden")) {
-        gsap.fromTo(
-          menu,
-          { opacity: 0, y: -30 },
-          { opacity: 1, duration: 0.4, y: 0, ease: "circ" }
-        );
+  function closeMenu() {
+    gsap.to(menu, {
+      opacity: 0,
+      y: -40,
+      duration: 0.3,
+      ease: "power2.in",
+      onComplete: () => {
+        menu?.classList.remove("flex");
+        menu?.classList.add("hidden");
       }
-      menu.classList.toggle("hidden");
-      menu.classList.toggle("flex");
+    });
+  }
+
+  if (btn && menu) {
+      gsap.fromTo("#mobileHeader",
+        {opacity: -1, y: -25 },
+        {opacity: 1, y:0 , duration: 1.8, ease: "power2.inOut"}
+    )
+    btn.addEventListener("click", () => {
+      const isHidden = menu.classList.contains("hidden");
+
+      if (isHidden) {
+        menu.classList.remove("hidden");
+        menu.classList.add("flex");
+
+        gsap.fromTo(menu,
+          { opacity: 0, y: -40 },
+          { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }
+        );
+      } else {
+        closeMenu();
+      }
+    });
+
+
+    const links = document.querySelectorAll("a");
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        closeMenu();
+
+        setTimeout(() => {
+          ScrollTrigger.refresh();
+        }, 300);
+      })
     });
   }
 </script>

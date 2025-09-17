@@ -1,13 +1,60 @@
 ---
 import projects from "../data/projects.json"
+import ProjectWindow from "./ProjectWindow.astro";
 ---
 
-
-<section id="projects" class="min-h-screen flex flex-col items-center justify-center">
-  {projects.map((project) => {
-    return <div>
-
-      {project.name}
-    </div>
-  })}
+<section id="projects" class="min-h-screen flex flex-col items-center">
+  <p class="text-4xl m-15">My projects</p>
+  <div class="mt-auto mb-auto flex gap-5">
+    {projects.map((project, i) => {
+      const dialogId = `projectWindow-${i}`;
+      return (
+        <div>
+          <p id={`proBtn-${i}`} class="text-2xl cursor-pointer">{project.name}</p>
+          <ProjectWindow
+            id={dialogId}
+            name={project.name}
+            desc={project.desc}
+            github={project.githubUrl}
+            url={project.url}
+            image={project.image}
+          />
+        </div>
+      );
+    })}
+  </div>
 </section>
+
+<script>
+  import { gsap } from "gsap";
+
+  const pros = document.querySelectorAll("[id^='proBtn-']");
+
+  pros.forEach((pro, i) => {
+    const dialog = document.getElementById(`projectWindow-${i}`);
+
+    pro.addEventListener("click", () => {
+      dialog?.showModal();
+    });
+
+    pro.addEventListener("mouseenter", () => {
+      gsap.to(pro, {
+        fontSize: "2.5rem",
+        opacity: 1,
+        color: "rgba(123,255,65,1)",
+        duration: 0.3,
+        ease: "power2.out"
+      });
+    });
+
+    pro.addEventListener("mouseleave", () => {
+      gsap.to(pro, {
+        fontSize: "1.5rem",
+        opacity: 0.85,
+        color: "#fff",
+        duration: 0.3,
+        ease: "power2.inOut"
+      });
+    });
+  });
+</script>
