@@ -3,7 +3,7 @@
 import skills from "../data/skills.json"
 ---
 
-<section id="skills" class="min-h-screen flex flex-col items-center justify-center reveal gap-20">
+<section id="skills" class="min-h-[100dvh] flex flex-col items-center justify-center reveal gap-20">
   <p class="text-3xl mt-10">Here are my skills</p>
   <ul class="text-center grid lg:grid-cols-4 grid-cols-2 gap-10">
 
@@ -36,7 +36,6 @@ gsap.registerPlugin(ScrollTrigger);
       trigger: "#skills",
       start: "top 90%",
       toggleActions: "play none none reverse",
-      invalidateOnRefresh: true
     },
   }
 );
