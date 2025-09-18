@@ -1,7 +1,6 @@
 ---
 import projects from "../data/projects.json"
 import ProjectWindow from "./ProjectWindow.astro";
-import StarBorder from './StarBorder'
 ---
 
 <section id="projects" class="min-h-screen flex flex-col items-center">
@@ -11,15 +10,11 @@ import StarBorder from './StarBorder'
       const dialogId = `projectWindow-${i}`;
       return (
         <div>
-          <StarBorder client:load
-            id={`proBtn-${i}`} class="text-2xl cursor-pointer"
-            as="button"
-            class="cursor-pointer"
-            color="cyan"
-            speed="1s"
+          <button
+            id={`proBtn-${i}`} class="border text-2xl cursor-pointer rounded-2xl"
           >
             {project.name}
-          </StarBorder>
+          </button>
           <ProjectWindow
             id={dialogId}
             name={project.name}
