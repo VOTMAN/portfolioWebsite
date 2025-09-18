@@ -1,6 +1,7 @@
 ---
 import projects from "../data/projects.json"
 import ProjectWindow from "./ProjectWindow.astro";
+import StarBorder from './StarBorder'
 ---
 
 <section id="projects" class="min-h-screen flex flex-col items-center">
@@ -10,7 +11,15 @@ import ProjectWindow from "./ProjectWindow.astro";
       const dialogId = `projectWindow-${i}`;
       return (
         <div>
-          <p id={`proBtn-${i}`} class="text-2xl cursor-pointer">{project.name}</p>
+          <StarBorder client:load
+            id={`proBtn-${i}`} class="text-2xl cursor-pointer"
+            as="button"
+            class="cursor-pointer"
+            color="cyan"
+            speed="1s"
+          >
+            {project.name}
+          </StarBorder>
           <ProjectWindow
             id={dialogId}
             name={project.name}
@@ -34,7 +43,31 @@ import ProjectWindow from "./ProjectWindow.astro";
     const dialog = document.getElementById(`projectWindow-${i}`);
 
     pro.addEventListener("click", () => {
-      dialog?.showModal();
+      if (dialog) {
+      dialog.showModal();
+
+      // Fade in from below
+      gsap.fromTo(
+        dialog,
+        { y: 100, opacity: 0, scale: 0.9 },
+        { y: 0, opacity: 1, scale: 1, duration: 0.6, ease: "power3.out" }
+      );
+
+      gsap.to(dialog, {
+        "--rotate": 360,
+        duration: 2,
+        repeat: -1,
+        ease: "linear"
+      });
+
+      gsap.to(dialog, {
+        boxShadow: "0 0 20px 5px rgba(0, 195, 255, 0.6)",
+        repeat: -1,
+        yoyo: true,
+        duration: 1.5,
+        ease: "sine.inOut"
+      });
+    }
     });
 
     pro.addEventListener("mouseenter", () => {

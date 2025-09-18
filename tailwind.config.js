@@ -1,4 +1,8 @@
 module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx,astro}", // make sure Astro is included
+  ],
   theme: {
     extend: {
       colors: {
@@ -10,4 +14,7 @@ module.exports = {
       },
     },
   },
+  plugins: [
+    require("tailwindcss-animate"), // ✅ required by react-bits
+  ],
 };

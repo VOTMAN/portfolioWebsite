@@ -2,6 +2,7 @@
 //layout.astro
 import "../styles/global.css"
 import RainbowBackground from "../components/RainbowBackground.astro"
+// import DarkVeil from '@/components/DarkVeil.jsx';
 ---
 
 <!doctype html>
@@ -14,8 +15,11 @@ import RainbowBackground from "../components/RainbowBackground.astro"
 		<title>Arnav</title>
 	</head>
 	<body>
-		<RainbowBackground/>
-		<slot />
+	<RainbowBackground/>
+	<!-- <div class="z-100 border" style={{ width: '100%', height: '600px', position: 'relative' }}> -->
+		<!-- <DarkVeil client:load/> -->
+	<!-- </div> -->
+	<slot />
 	</body>
 </html>
 
@@ -29,5 +33,6 @@ import RainbowBackground from "../components/RainbowBackground.astro"
 		scroll-behavior: smooth;
 		/* background-color: rgba(0, 0, 0, 0.8); */
 		color: var(--text)
+
 	}
 </style>

@@ -21,7 +21,7 @@
   position: absolute;
   transform: rotate(10deg);
   transform-origin: top right;
-  animation: slide 45s linear infinite;
+  animation: slide 55s linear infinite;
   opacity: 0.3;
 }
 

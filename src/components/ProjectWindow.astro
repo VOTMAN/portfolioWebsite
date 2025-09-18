@@ -2,7 +2,7 @@
 const { id, name, desc, github, url, image } = Astro.props;
 ---
 
-<dialog id={id} class="p-6 bg-black/90 text-white rounded-lg shadow-lg m-auto text-center w-200">
+<dialog id={id} class="project-dialog p-6 bg-black/90 text-white rounded-lg shadow-lg m-auto text-center w-200">
   <a href={url} target="_blank"><img src={image} alt={name + " image"} class="hover:opacity-80 cursor-pointer transition"></a>
   <p class="text-2xl font-bold mb-4">{name}</p>
   <p class="mb-4">{desc}</p>
@@ -14,3 +14,38 @@ const { id, name, desc, github, url, image } = Astro.props;
     <button class="px-4 py-2 bg-[var(--accent)] text-black rounded cursor-pointer">Close</button>
   </form>
 </dialog>
+
+<style>
+  .project-dialog {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.project-dialog::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  border: conic-gradient(
+    from 0deg,
+    rgb(47, 59, 36),
+    transparent 120deg,
+    cyan 240deg,
+    transparent 360deg
+  );
+  z-index: -1;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+</style>
