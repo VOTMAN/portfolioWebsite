@@ -34,8 +34,11 @@ gsap.registerPlugin(ScrollTrigger);
     ease: "power3.out",
     scrollTrigger: {
       trigger: "#skills",
-      start: "top 90%",
+      start: "top 80%",
+      end: "bottom 20%",
       toggleActions: "play none none reverse",
+      scrub: true,
+      once: true,
     },
   }
 );
@@ -51,6 +54,8 @@ gsap.from(".skill-card", {
     trigger: "#skills",
     start: "top 90%",
     toggleActions: "play none none reverse",
+    scrub: true,
+    once: true,
   },
 });
 </script>
