@@ -1,0 +1,34 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Pill from "@/components/Pill";
+---
+
+<Layout>
+  <div class="relative min-h-screen">
+    <Pill client:load
+			logo={}
+			logoAlt='no logo'
+		items={[
+			{ label: 'Home', href: '/' },
+			{ label: 'About Me', href: '/about' },
+			{ label: 'Skills', href: '/#skills' },
+			{ label: 'Projects', href: '/#projects' },
+			{ label: 'Contact', href: '/#contact' }
+		]}
+		activeHref="/"
+		className="fixed top-4 left-1/2 -translate-x-1/2 z-50"
+  ease="power2.easeOut"
+  baseColor="#cba"
+  pillColor="#000"
+  pillTextColor="#fff"
+  hoveredPillTextColor="#000"
+/>
+    ABOUT
+  </div>
+</Layout>
+
+<style>
+	html {
+		background-color: rgba(0, 0, 0, 0.95);
+	}
+</style>

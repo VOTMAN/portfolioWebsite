@@ -5,17 +5,39 @@ import Welcome from '../components/Welcome.astro';
 import Skills from '../components/Skills.astro';
 import Layout from '../layouts/Layout.astro';
 import Projects from '../components/Projects.astro';
-import ProjectWindow from '../components/ProjectWindow.astro';
+// import ProjectWindow from '../components/ProjectWindow.astro';
+import Pill from "../components/Pill"
+import Contact from '@/components/Contact.astro';
 ---
 
 <Layout>
 	<div class="flex flex-col min-h-screen">
-		<Header />
+		<Pill client:load
+			logo={}
+			logoAlt='no logo'
+		items={[
+			{ label: 'Home', href: '/' },
+			{ label: 'About Me', href: '/about' },
+			{ label: 'Skills', href: '#skills' },
+			{ label: 'Projects', href: '#projects' },
+			{ label: 'Contact', href: '#contact' }
+		]}
+		activeHref="/"
+		className="fixed top-4 left-1/2 -translate-x-1/2 z-50"
+  ease="power2.easeOut"
+  baseColor="#cba"
+  pillColor="#000"
+  pillTextColor="#fff"
+  hoveredPillTextColor="#000"
+
+	/>
+		<!-- <Header /> -->
 		<Welcome />
 	</div>
-	<Skills />
+		<Skills />
 	<Projects/>
-	<button id="scrollTopBtn" class="fixed text-2xl z-100 bottom-5 right-5 cursor-pointer">⬆</button>
+	<Contact/>
+	<button id="scrollTopBtn" class="fixed text-2xl z-100 bottom-5 right-5 cursor-pointer" onclick="window.scrollTo({top:0})">⬆</button>
 </Layout>
 
 <style>
@@ -30,7 +52,7 @@ import ProjectWindow from '../components/ProjectWindow.astro';
 	btn?.addEventListener("click", () => {
 		window.scrollTo({
 			top: 0,
-			behavior: "smooth"  // ✅ smooth scrolling
+			behavior: "smooth"
 		});
 	});
 </script>
