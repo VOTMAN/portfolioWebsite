@@ -13,8 +13,6 @@ import Contact from '@/components/Contact.astro';
 <Layout>
 	<div class="flex flex-col min-h-screen">
 		<Pill client:load
-			logo={}
-			logoAlt='no logo'
 		items={[
 			{ label: 'Home', href: '/' },
 			{ label: 'About Me', href: '/about' },
@@ -25,7 +23,7 @@ import Contact from '@/components/Contact.astro';
 		activeHref="/"
 		className="fixed top-4 left-1/2 -translate-x-1/2 z-50"
   ease="power2.easeOut"
-  baseColor="#cba"
+  baseColor="#abd"
   pillColor="#000"
   pillTextColor="#fff"
   hoveredPillTextColor="#000"
@@ -42,7 +40,7 @@ import Contact from '@/components/Contact.astro';
 
 <style>
 	html {
-		background-color: rgba(0, 0, 0, 0.95);
+		background-color: rgba(16, 16, 19, 0.95);
 	}
 </style>
 

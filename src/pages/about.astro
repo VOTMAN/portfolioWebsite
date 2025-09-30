@@ -4,31 +4,65 @@ import Pill from "@/components/Pill";
 ---
 
 <Layout>
-  <div class="relative min-h-screen">
-    <Pill client:load
-			logo={}
-			logoAlt='no logo'
-		items={[
-			{ label: 'Home', href: '/' },
-			{ label: 'About Me', href: '/about' },
-			{ label: 'Skills', href: '/#skills' },
-			{ label: 'Projects', href: '/#projects' },
-			{ label: 'Contact', href: '/#contact' }
-		]}
-		activeHref="/"
-		className="fixed top-4 left-1/2 -translate-x-1/2 z-50"
-  ease="power2.easeOut"
-  baseColor="#cba"
-  pillColor="#000"
-  pillTextColor="#fff"
-  hoveredPillTextColor="#000"
-/>
-    ABOUT
-  </div>
+  <Pill client:load
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'About Me', href: '/about' },
+      { label: 'Skills', href: '/#skills' },
+      { label: 'Projects', href: '/#projects' },
+      { label: 'Contact', href: '/#contact' }
+    ]}
+    activeHref="/about"
+    className="fixed top-4 left-1/2 -translate-x-1/2 z-50"
+    ease="power2.easeOut"
+    baseColor="#cba"
+    pillColor="#000"
+    pillTextColor="#fff"
+    hoveredPillTextColor="#000"
+  />
+
+  <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 text-white">
+    <h1 class="fade-target text-5xl font-bold tracking-tight mb-4">Arnav</h1>
+    <p class="fade-target text-lg text-gray-400 mb-6">
+      • 📍 Hyderabad, India <br/>
+      ✉️ <a href="mailto:vara.nageshwaraarnav@gmail.com" class="underline hover:text-teal-300">vara.nageshwaraarnav@gmail.com</a> • 
+      💻 <a href="https://github.com/VOTMAN" target="_blank" class="underline hover:text-teal-300">GitHub: VOTMAN</a>
+    </p>
+
+    <p class="fade-target max-w-2xl text-lg leading-relaxed text-gray-300">
+      Hi, I’m Arnav — a <span class="text-teal-400 font-medium">Computer Science undergraduate</span> passionate about building
+      <span class="text-teal-400 font-medium">user-friendly web apps</span> and <span class="text-teal-400 font-medium">high-impact solutions</span>.
+      With experience in <strong>full-stack development</strong> and a knack for problem-solving, I love turning complex
+      challenges into simple, clean, and functional experiences. <br/><br/>
+      Outside of coding, I’m constantly learning new technologies, contributing to personal projects,
+      and exploring ways to make digital products more intuitive and efficient.
+    </p>
+  </section>
 </Layout>
 
 <style>
-	html {
-		background-color: rgba(0, 0, 0, 0.95);
-	}
+  html {
+    background-color: rgba(0, 0, 0, 0.95);
+  }
+
+	a {
+    transition: color 0.3s ease;
+  }
 </style>
+
+<script>
+	import { gsap } from "gsap";
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const fadeTargets = document.querySelectorAll(".fade-target");
+
+    gsap.from(fadeTargets, {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      stagger: 0.3,
+      ease: "power2.out"
+    });
+  });
+
+</script>

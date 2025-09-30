@@ -170,7 +170,7 @@ const PillNav = ({
       }
     }
 
-    if (menu) {
+    if (menu && hamburger) {
       if (newState) {
         gsap.set(menu, { visibility: 'visible' });
         gsap.fromTo(
@@ -201,6 +201,12 @@ const PillNav = ({
     }
 
     onMobileMenuClick?.();
+  };
+
+  const handleMobileMenuItemClick = () => {
+    if (isMobileMenuOpen) {
+      toggleMobileMenu();
+    }
   };
 
   const isExternalLink = href =>
@@ -389,7 +395,7 @@ const PillNav = ({
                     style={defaultStyle}
                     onMouseEnter={hoverIn}
                     onMouseLeave={hoverOut}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={handleMobileMenuItemClick}
                   >
                     {item.label}
                   </a>
@@ -400,7 +406,7 @@ const PillNav = ({
                     style={defaultStyle}
                     onMouseEnter={hoverIn}
                     onMouseLeave={hoverOut}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={handleMobileMenuItemClick}
                   >
                     {item.label}
                   </a>

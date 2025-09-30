@@ -4,27 +4,13 @@
     "desc": "This app is a Secure, cross-platform, and locally hosted password manager.",
     "githubUrl": "https://github.com/VOTMAN/passwordManager",
     "url": "https://password-manager-seven-delta.vercel.app/",
-    "image": "/projects/test.png"
+    "image": "/projects/pass.png"
   },
   {
     "name": "Social App",
     "desc": "Social App Social App is a minimalistic social media platform built with Next.js. Share your thoughts with or without images, interact with others through likes and comments, and view posts globally or just your own in the dashboard.",
     "githubUrl": "https://github.com/VOTMAN/socialapp",
-    "url": "https://socialapp-rose.vercel.app/",
-    "image": ""
-  },
-  {
-    "name": "Password Manager",
-    "desc": "This app is a Secure, cross-platform, and locally hosted password manager.",
-    "githubUrl": "https://github.com/VOTMAN/passwordManager",
-    "url": "https://password-manager-seven-delta.vercel.app/",
-    "image": "/projects/test.png"
-  },
-  {
-    "name": "Social App",
-    "desc": "Social App Social App is a minimalistic social media platform built with Next.js. Share your thoughts with or without images, interact with others through likes and comments, and view posts globally or just your own in the dashboard.",
-    "githubUrl": "https://github.com/VOTMAN/socialapp",
-    "url": "https://socialapp-rose.vercel.app/",
-    "image": ""
+    "url": "https://socialappp-ashen.vercel.app/",
+    "image": "/projects/socialapp.png"
   }
 ]
