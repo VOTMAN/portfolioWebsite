@@ -12,5 +12,12 @@
     "githubUrl": "https://github.com/VOTMAN/socialapp",
     "url": "https://socialappp-ashen.vercel.app/",
     "image": "/projects/socialapp.png"
+  },
+  {
+    "name": "Ecom Cart",
+    "desc": "A fully functional ecommerce cart system, which has db persistance through mock users saved to mongodb",
+    "githubUrl": "https://github.com/VOTMAN/ecomCart",
+    "url": "https://ecom-cart-woad.vercel.app/",
+    "image": "/projects/ecomCart.png"
   }
 ]
