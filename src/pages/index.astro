@@ -1,56 +1,49 @@
 ---
 // index.astro
-import Header from '../components/Header.astro';
-import Welcome from '../components/Welcome.astro';
-import Skills from '../components/Skills.astro';
-import Layout from '../layouts/Layout.astro';
-import Projects from '../components/Projects.astro';
+import Header from "../components/Header.astro";
+import Welcome from "../components/Welcome.astro";
+import Skills from "../components/Skills.astro";
+import Layout from "../layouts/Layout.astro";
+import Projects from "../components/Projects.astro";
 // import ProjectWindow from '../components/ProjectWindow.astro';
-import Pill from "../components/Pill"
-import Contact from '@/components/Contact.astro';
+import Pill from "../components/Pill";
+import Contact from "@/components/Contact.astro";
 ---
 
 <Layout>
-	<div class="flex flex-col min-h-screen">
-		<Pill client:load
-		items={[
-			{ label: 'Home', href: '/' },
-			{ label: 'About Me', href: '/about' },
-			{ label: 'Skills', href: '#skills' },
-			{ label: 'Projects', href: '#projects' },
-			{ label: 'Contact', href: '#contact' }
-		]}
-		activeHref="/"
-		className="fixed top-4 left-1/2 -translate-x-1/2 z-50"
-  ease="power2.easeOut"
-  baseColor="#abd"
-  pillColor="#000"
-  pillTextColor="#fff"
-  hoveredPillTextColor="#000"
-
-	/>
-		<!-- <Header /> -->
-		<Welcome />
-	</div>
-		<Skills />
-	<Projects/>
-	<Contact/>
-	<button id="scrollTopBtn" class="fixed text-2xl z-100 bottom-5 right-5 cursor-pointer" onclick="window.scrollTo({top:0})">⬆</button>
+    <div class="flex flex-col min-h-screen">
+        <Pill
+            client:load
+            items={[
+                { label: "Home", href: "/" },
+                { label: "About Me", href: "/about" },
+                { label: "Skills", href: "#skills" },
+                { label: "Projects", href: "#projects" },
+                { label: "Contact", href: "#contact" },
+            ]}
+            activeHref="/"
+            className="fixed top-4 left-1/2 -translate-x-1/2 z-50"
+            ease="power2.easeOut"
+            baseColor="#abd"
+            pillColor="#000"
+            pillTextColor="#fff"
+            hoveredPillTextColor="#000"
+        />
+        <!-- <Header /> -->
+        <Welcome />
+    </div>
+    <Skills />
+    <Projects />
+    <Contact />
+    <button
+        id="scrollTopBtn"
+        class="fixed text-2xl z-100 bottom-5 right-5 cursor-pointer"
+        ><a href="#welcome">⬆</a></button
+    >
 </Layout>
 
 <style>
-	html {
-		background-color: rgba(16, 16, 19, 0.95);
-	}
+    html {
+        background-color: rgba(16, 16, 19, 0.95);
+    }
 </style>
-
-<script>
-  const btn = document.getElementById("scrollTopBtn");
-
-	btn?.addEventListener("click", () => {
-		window.scrollTo({
-			top: 0,
-			behavior: "smooth"
-		});
-	});
-</script>
