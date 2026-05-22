@@ -14,6 +14,13 @@
     "image": "/projects/pass.png"
   },
   {
+    "name": "Syncinote",
+    "desc": "A simple, elegant note-taking app with Markdown support and AI assistance. Built with Svelte 5 and SvelteKit.",
+    "githubUrl": "https://github.com/VOTMAN/SynciNote",
+    "url": "https://synci-note.vercel.app/",
+    "image": "/projects/sync.png"
+  },  
+  {
     "name": "Social App",
     "desc": "Social App Social App is a minimalistic social media platform built with Next.js. Share your thoughts with or without images, interact with others through likes and comments, and view posts globally or just your own in the dashboard.",
     "githubUrl": "https://github.com/VOTMAN/socialapp",
