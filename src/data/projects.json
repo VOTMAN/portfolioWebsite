@@ -2,8 +2,8 @@
   {
     "name": "AI-Powered Video Game Retrieval and Classification System",
     "desc": "Designed and implemented a computer vision retrieval system that identifies video games from gameplay clips using OpenCLIP embeddings. Engineered an end-to-end pipeline featuring frame sampling, semantic image retrieval, confidence scoring, temporal prediction aggregation, embedding caching, and explainable AI frame attribution.",
-    "githubUrl": "https://ai-game-detector.vercel.app/",
-    "url": "https://password-manager-seven-delta.vercel.app/",
+    "githubUrl": "https://github.com/VOTMAN/AI-Game-Detector/tree/main",
+    "url": "https://ai-game-detector.vercel.app/",
     "image": "/projects/aigame.png"
   },
    {
